@@ -28,7 +28,7 @@ import java.io.Serializable;
 
 /**
  * This class represents a Reference of a Group
- * 
+ *
  * <p>
  * For more detailed information please look at the <a
  * href="http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2">SCIM core schema 2.0, section 3.2</a>
@@ -64,14 +64,14 @@ public class GroupRef extends MultiValuedAttribute implements Serializable {
 
     /**
      * Gets the type of the attribute.
-     * 
+     *
      * <p>
      * For more detailed information please look at the <a href=
      * "http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2" >SCIM core schema 2.0, section 3.2</a>
      * </p>
-     * 
+     *
      * @return
-     * 
+     *
      * @return the actual type
      */
     public Type getType() {
@@ -115,7 +115,7 @@ public class GroupRef extends MultiValuedAttribute implements Serializable {
 
     @Override
     public String toString() {
-        return "GroupRef [display=" + getDisplay() +", value=" + getValue() + ", type=" + type + ", primary=" + isPrimary() 
+        return "GroupRef [display=" + getDisplay() +", value=" + getValue() + ", type=" + type + ", primary=" + isPrimary()
                 + ", operation=" + getOperation() + ", ref=" + getReference() + "]";
     }
 
@@ -139,8 +139,8 @@ public class GroupRef extends MultiValuedAttribute implements Serializable {
         }
 
         /**
-         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getType()}).
-         * 
+         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getValue()}).
+         *
          * @param type
          *        the type of the attribute
          * @return the builder itself

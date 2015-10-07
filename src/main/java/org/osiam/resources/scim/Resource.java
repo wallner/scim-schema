@@ -28,6 +28,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.collect.ImmutableSet;
 
 /**
  * This class represents a SCIM Resource and is the base class for {@link User}s and {@link Group}s.
@@ -95,7 +96,7 @@ public abstract class Resource implements Serializable {
      * @return a the list of schemas as a {@link Set}
      */
     public Set<String> getSchemas() {
-        return schemas;
+        return ImmutableSet.copyOf(schemas);
     }
 
     /**

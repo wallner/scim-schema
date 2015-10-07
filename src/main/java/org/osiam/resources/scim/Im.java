@@ -28,7 +28,7 @@ import java.io.Serializable;
 
 /**
  * This class represents a Im attribute.
- * 
+ *
  * <p>
  * For more detailed information please look at the <a
  * href="http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2">SCIM core schema 2.0, section 3.2</a>
@@ -74,14 +74,14 @@ public class Im extends MultiValuedAttribute implements Serializable {
 
     /**
      * Gets the type of the attribute.
-     * 
+     *
      * <p>
      * For more detailed information please look at the <a href=
      * "http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2" >SCIM core schema 2.0, section 3.2</a>
      * </p>
-     * 
+     *
      * @return
-     * 
+     *
      * @return the actual type
      */
     public Type getType() {
@@ -118,10 +118,10 @@ public class Im extends MultiValuedAttribute implements Serializable {
         return true;
     }
 
-    
+
     @Override
     public String toString() {
-        return "Im [value=" + getValue() + ", type=" + type + ", primary=" + isPrimary() 
+        return "Im [value=" + getValue() + ", type=" + type + ", primary=" + isPrimary()
                 + ", operation=" + getOperation() + "]";
     }
 
@@ -137,7 +137,7 @@ public class Im extends MultiValuedAttribute implements Serializable {
 
         /**
          * builds an Builder based of the given Attribute
-         * 
+         *
          * @param im
          *        existing Attribute
          */
@@ -166,8 +166,8 @@ public class Im extends MultiValuedAttribute implements Serializable {
         }
 
         /**
-         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getType()}).
-         * 
+         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getValue()}).
+         *
          * @param type
          *        the type of the attribute
          * @return the builder itself

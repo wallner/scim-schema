@@ -186,7 +186,7 @@ public class Email extends MultiValuedAttribute implements Serializable {
         }
 
         /**
-         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getType()}).
+         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getValue()}).
          *
          * @param type
          *        the type of the attribute

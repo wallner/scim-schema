@@ -77,7 +77,7 @@ class MetaSpec extends Specification {
         meta.version == "version??"
     }
 
-    def "attributes should should be ebale to get enriched"() {
+    def "attributes should should be able to be added"() {
         given:
         def meta = new Meta.Builder()
                 .setLocation("dunno")

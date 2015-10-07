@@ -55,7 +55,7 @@ class GroupSpec extends Specification {
         group.id == 'id'
     }
 
-    def 'should be able to enrich group members'() {
+    def 'should be able to add group members'() {
         given:
         def group = new Group.Builder('display').build()
         when:

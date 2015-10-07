@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * This class represents a photo attribute.
- * 
+ *
  * <p>
  * For more detailed information please look at the <a
  * href="http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2">SCIM core schema 2.0, section 3.2</a>
@@ -70,7 +70,7 @@ public class Photo extends MultiValuedAttribute implements Serializable {
     /**
      * the value of the photo as URI. Check first with {@link Photo#getValueType()} if the type is
      * {@link PhotoValueType#URI}
-     * 
+     *
      * @return returns the value of the photo as URI
      */
     public URI getValueAsURI() {
@@ -86,7 +86,7 @@ public class Photo extends MultiValuedAttribute implements Serializable {
     /**
      * the value of the photo as {@link ImageDataURI}. Check first with {@link Photo#getValueType()} if the type is
      * {@link PhotoValueType#IMAGE_DATA_URI}
-     * 
+     *
      * @return the value of the photo as {@link ImageDataURI}
      */
     @JsonIgnore
@@ -95,7 +95,7 @@ public class Photo extends MultiValuedAttribute implements Serializable {
     }
 
     /**
-     * 
+     *
      * @return the type of the saved photo value
      */
     @JsonIgnore
@@ -127,14 +127,14 @@ public class Photo extends MultiValuedAttribute implements Serializable {
 
     /**
      * Gets the type of the attribute.
-     * 
+     *
      * <p>
      * For more detailed information please look at the <a href=
      * "http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2" >SCIM core schema 2.0, section 3.2</a>
      * </p>
-     * 
+     *
      * @return
-     * 
+     *
      * @return the actual type
      */
     public Type getType() {
@@ -189,7 +189,7 @@ public class Photo extends MultiValuedAttribute implements Serializable {
 
         /**
          * builds an Builder based of the given Attribute
-         * 
+         *
          * @param photo
          *        existing Attribute
          */
@@ -213,7 +213,7 @@ public class Photo extends MultiValuedAttribute implements Serializable {
 
         /**
          * an URI pointing to an image
-         * 
+         *
          * @param uri
          *        a image URI
          * @return the Builder itself
@@ -226,7 +226,7 @@ public class Photo extends MultiValuedAttribute implements Serializable {
         /**
          * an imageDataURI which contains a small in data image. For performance issues it is recommend to to store big
          * pictures as ImageDataURI
-         * 
+         *
          * @param image
          *        a image
          * @return the Builder itself
@@ -237,8 +237,8 @@ public class Photo extends MultiValuedAttribute implements Serializable {
         }
 
         /**
-         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getType()}).
-         * 
+         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getValue()}).
+         *
          * @param type
          *        the type of the attribute
          * @return the builder itself

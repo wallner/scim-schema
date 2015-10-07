@@ -25,12 +25,14 @@ package org.osiam.resources.scim;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.collect.ImmutableSet;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * A class that holds all information from a search request
- * <p/>
  * <p>
  * For more detailed information please look at the <a
  * href="http://tools.ietf.org/html/draft-ietf-scim-core-schema-02">SCIM core schema 2.0</a>
@@ -45,7 +47,7 @@ public class SCIMSearchResult<T> {
     private long totalResults;
     private long itemsPerPage;
     private long startIndex;
-    private Set<String> schemas = new HashSet<>(Arrays.asList(SCHEMA));
+    private Set<String> schemas = ImmutableSet.of(SCHEMA);
     private List<T> resources = new ArrayList<>();
 
     /**

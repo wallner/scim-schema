@@ -25,6 +25,7 @@ package org.osiam.resources.scim;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.google.common.collect.ImmutableSet;
 import org.osiam.resources.helper.JsonDateSerializer;
 
 import java.io.Serializable;
@@ -108,7 +109,7 @@ public class Meta implements Serializable {
      * @return a set of attributes to be deleted
      */
     public Set<String> getAttributes() {
-        return attributes;
+        return ImmutableSet.copyOf(attributes);
     }
 
     /**

@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 /**
  * This class represents a x509Certificate attribute.
- * 
+ *
  * <p>
  * For more detailed information please look at the <a
  * href="http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2">SCIM core schema 2.0, section 3.2</a>
@@ -71,14 +71,14 @@ public class X509Certificate extends MultiValuedAttribute implements Serializabl
 
     /**
      * Gets the type of the attribute.
-     * 
+     *
      * <p>
      * For more detailed information please look at the <a href=
      * "http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-3.2" >SCIM core schema 2.0, section 3.2</a>
      * </p>
-     * 
+     *
      * @return
-     * 
+     *
      * @return the actual type
      */
     public Type getType() {
@@ -87,7 +87,7 @@ public class X509Certificate extends MultiValuedAttribute implements Serializabl
 
     @Override
     public String toString() {
-        return "X509Certificate [value=" + getValue() + ", type=" + type + ", primary=" + isPrimary() 
+        return "X509Certificate [value=" + getValue() + ", type=" + type + ", primary=" + isPrimary()
                 + ", operation=" + getOperation() + "]";
     }
 
@@ -103,7 +103,7 @@ public class X509Certificate extends MultiValuedAttribute implements Serializabl
 
         /**
          * builds an Builder based of the given Attribute
-         * 
+         *
          * @param x509Certificate
          *        existing Attribute
          */
@@ -138,8 +138,8 @@ public class X509Certificate extends MultiValuedAttribute implements Serializabl
         }
 
         /**
-         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getType()}).
-         * 
+         * Sets the label indicating the attribute's function (See {@link MultiValuedAttribute#getValue()}).
+         *
          * @param type
          *        the type of the attribute
          * @return the builder itself
