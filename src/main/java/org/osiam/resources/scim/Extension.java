@@ -33,6 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+import com.google.common.base.Strings;
 import org.osiam.resources.helper.ExtensionSerializer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -41,7 +42,7 @@ import com.google.common.collect.ImmutableMap;
 
 /**
  * This class represents a schema extension.
- * 
+ *
  * <p>
  * For more detailed information please look at the <a
  * href="http://tools.ietf.org/html/draft-ietf-scim-core-schema-02#section-4">SCIM core schema 2.0, section 4</a>
@@ -70,7 +71,7 @@ public class Extension implements Serializable {
 
     /**
      * Returns the URN of this extension.
-     * 
+     *
      * @return The URN
      */
     public String getUrn() {
@@ -79,7 +80,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name and type.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @param extensionFieldType
@@ -91,7 +92,7 @@ public class Extension implements Serializable {
      *         if the given field is null or an empty string or if the extensionFieldType is null.
      */
     public <T> T getField(String field, ExtensionFieldType<T> extensionFieldType) {
-        if (field == null || field.isEmpty()) {
+        if (Strings.isNullOrEmpty(field)) {
             throw new IllegalArgumentException("Invalid field name");
         }
         if (extensionFieldType == null) {
@@ -107,7 +108,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name as String.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @return The value for the field with the given name.
@@ -122,7 +123,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name as boolean.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @return The value for the field with the given name.
@@ -137,7 +138,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name as ByteBuffer.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @return The value for the field with the given name.
@@ -152,7 +153,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name as Date.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @return The value for the field with the given name.
@@ -167,7 +168,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name as BigDecimal.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @return The value for the field with the given name.
@@ -182,7 +183,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name as BigInteger.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @return The value for the field with the given name.
@@ -197,7 +198,7 @@ public class Extension implements Serializable {
 
     /**
      * Return the value for the field with a given name as URI.
-     * 
+     *
      * @param field
      *        The name of the field to retrieve the value of.
      * @return The value for the field with the given name.
@@ -212,7 +213,7 @@ public class Extension implements Serializable {
 
     /**
      * Provides a {@link Map} containing the entries of the extension. Note that the returned {@link Map} is immutable.
-     * 
+     *
      * @return The Entries of this schema as an map.
      */
     @JsonIgnore
@@ -223,7 +224,7 @@ public class Extension implements Serializable {
     /**
      * Checks if the given field is present in this extension because not every field is mandatory (according to scim
      * 2.0 spec).
-     * 
+     *
      * @param field
      *        Name of the field to check
      * @return true if the given field is present, else false
@@ -300,7 +301,7 @@ public class Extension implements Serializable {
 
         /**
          * Constructs an extension with the given urn.
-         * 
+         *
          * @param urn
          *        the urn of the extension
          */
@@ -310,7 +311,7 @@ public class Extension implements Serializable {
 
         /**
          * Constructs an extension based on the given extension.
-         * 
+         *
          * @param extension
          *        existing extension
          */
@@ -322,7 +323,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -337,7 +338,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -352,7 +353,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -367,7 +368,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -382,7 +383,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -397,7 +398,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -412,7 +413,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -427,7 +428,7 @@ public class Extension implements Serializable {
         /**
          * Sets the field specified by the given field name with the given value of the given type. <br>
          * Can only be set and saved if extension field is registered in the database
-         * 
+         *
          * @param fieldName
          *        the field name
          * @param value
@@ -452,7 +453,7 @@ public class Extension implements Serializable {
 
         /**
          * removes one field and its value
-         * 
+         *
          * @param fieldName
          *        the field to be removed
          * @return the builder itself
@@ -479,7 +480,7 @@ public class Extension implements Serializable {
 
         /**
          * Constructs a new {@link Field} with the given type and value.
-         * 
+         *
          * @param type
          *        the type of the field
          * @param value
@@ -492,7 +493,7 @@ public class Extension implements Serializable {
 
         /**
          * Returns the type of the {@link Field}
-         * 
+         *
          * @return the type of the {@link Field}
          */
         public ExtensionFieldType<?> getType() {
@@ -501,7 +502,7 @@ public class Extension implements Serializable {
 
         /**
          * Returns the value of the {@link Field}
-         * 
+         *
          * @return the value of the {@link Field}
          */
         public String getValue() {

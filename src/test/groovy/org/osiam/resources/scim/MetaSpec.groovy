@@ -23,8 +23,6 @@
 
 package org.osiam.resources.scim
 
-import org.junit.Before
-
 import spock.lang.Specification
 
 class MetaSpec extends Specification {
@@ -77,17 +75,26 @@ class MetaSpec extends Specification {
         meta.version == "version??"
     }
 
-    def "attributes should should be able to be added"() {
+    def "set of attributes is imutable"() {
         given:
         def meta = new Meta.Builder()
                 .setLocation("dunno")
                 .setVersion("version??")
                 .build()
-
         when:
         meta.getAttributes().add("hallo")
         then:
-        meta.getAttributes().size() == 1
+        thrown(UnsupportedOperationException)
+    }
+
+    def "Adding single attribute via setter"() {
+        when:
+        def meta = new Meta.Builder()
+                .setLocation("dunno")
+                .setVersion("version??")
+                .addAttribute("Attribute").build()
+        then:
+        meta.attributes.size() == 1
     }
 
     def "should contain resourceType"() {
@@ -97,7 +104,7 @@ class MetaSpec extends Specification {
         meta.getResourceType() == "rt"
     }
 
-    def 'creating a new MetaBuilder based on a old one is equals to the given'(){
+    def 'creating a new MetaBuilder based on a old one is equals to the given'() {
         given:
         def meta = new Meta.Builder()
                 .setLocation("dunno")
@@ -113,7 +120,7 @@ class MetaSpec extends Specification {
         newMeta == meta
     }
 
-    def 'creating a new Meta.Builder with a given null raises exception'(){
+    def 'creating a new Meta.Builder with a given null raises exception'() {
         when:
         new Meta.Builder(null)
 
